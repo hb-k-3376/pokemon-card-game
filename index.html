@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="/style/reset.css">
+  <link rel="stylesheet" href="/style/button.css">
+  <link rel="stylesheet" href="/style/board.css">
+  <link rel="stylesheet" href="/style/global.css">
+  <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://pngimg.com/uploads/pokemon_logo/pokemon_logo_PNG9.png" alt="Pokemon Logo">
+    </div>
+  </header>
+  <main>
+
+    <div class="section-title">🎮 난이도 선택</div>
+    <div class="button-section">
+      <button type="button" value="4" class="pokemon-btn very-easy active">Very Easy</button>
+      <button type="button" value="8" class="pokemon-btn easy">Easy</button>
+      <button type="button" value="16" class="pokemon-btn normal">Normal</button>
+      <button type="button" value="20" class="pokemon-btn hard">Hard</button>
+      <button type="button" value="30" class="pokemon-btn very-hard">Very Hard</button>
+    </div>
+
+    <div class="section-title">⚡ 게임 컨트롤</div>
+    <div class="button-section">
+      <button class="action-btn start-btn">🎯 Start Game</button>
+      <button class="action-btn reset-btn">🔄 Reset</button>
+    </div>
+
+    <section class="board-section">
+      <ul class="board">
+      </ul>
+    </section>
+  </main>
+
+  <footer></footer>
+</body>
+
+</html>

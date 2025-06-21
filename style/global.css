@@ -1,0 +1,28 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #66b954 0%, #b282e2 100%);
+  padding: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.logo {
+  width: 300px;
+  height: 100px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}

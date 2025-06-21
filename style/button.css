@@ -1,0 +1,151 @@
+.button-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 기본 포켓몬 스타일 버튼 */
+.pokemon-btn {
+  position: relative;
+  padding: 12px 24px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 0 #2c5aa0, 0 12px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #4285f4, #1a73e8);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  min-width: 120px;
+}
+
+.pokemon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0 #2c5aa0, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.pokemon-btn.active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #2c5aa0, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 난이도별 버튼 스타일 */
+.very-easy {
+  background: linear-gradient(145deg, #4ade80, #22c55e);
+  box-shadow: 0 8px 0 #166534, 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.very-easy:hover {
+  box-shadow: 0 10px 0 #166534, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.very-easy.active {
+  box-shadow: 0 4px 0 #166534, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.easy {
+  background: linear-gradient(145deg, #60a5fa, #3b82f6);
+  box-shadow: 0 8px 0 #1e40af, 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.easy:hover {
+  box-shadow: 0 10px 0 #1e40af, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.easy.active {
+  box-shadow: 0 4px 0 #1e40af, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.normal {
+  background: linear-gradient(145deg, #facc15, #eab308);
+  box-shadow: 0 8px 0 #a16207, 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.normal:hover {
+  box-shadow: 0 10px 0 #a16207, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.normal.active {
+  box-shadow: 0 4px 0 #a16207, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hard {
+  background: linear-gradient(145deg, #fb7185, #f43f5e);
+  box-shadow: 0 8px 0 #be123c, 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hard:hover {
+  box-shadow: 0 10px 0 #be123c, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.hard.active {
+  box-shadow: 0 4px 0 #be123c, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.very-hard {
+  background: linear-gradient(145deg, #a855f7, #9333ea);
+  box-shadow: 0 8px 0 #6b21a8, 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.very-hard:hover {
+  box-shadow: 0 10px 0 #6b21a8, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.very-hard.active {
+  box-shadow: 0 4px 0 #6b21a8, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 액션 버튼들 */
+.action-btn {
+  position: relative;
+  padding: 16px 32px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.start-btn {
+  background: linear-gradient(145deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 0 0 3px #065f46, 0 8px 0 #065f46, 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px #065f46, 0 10px 0 #065f46, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.reset-btn {
+  background: linear-gradient(145deg, #ef4444, #dc2626);
+  color: white;
+  box-shadow: 0 0 0 3px #991b1b, 0 8px 0 #991b1b, 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px #991b1b, 0 10px 0 #991b1b, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.action-btn.active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 3px #065f46, 0 4px 0 #065f46, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
