@@ -1,4 +1,4 @@
-import { initGame } from './game/index.js';
+import { initGame, gameState } from './game/index.js';
 import { uiController } from './ui/index.js';
 
 const configState = {

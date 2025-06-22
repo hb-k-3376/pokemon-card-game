@@ -1,14 +1,15 @@
 import { getCardElementBy, renderCards } from './dom.js';
-import { flipToFront, flipToBack, setGridLayout } from './cardView.js';
+import { setGridLayout } from './cardView.js';
 import { getCards } from './gameUtils.js';
 import { getNode } from '../lib/utils.js';
-import { animationCardEntrance } from './animation.js';
+import { animationCardEntrance, animationFlipToFront, animationFlipToBack } from './animation.js';
 
 export const gameState = {
   firstCard: null,
   secondCard: null,
   isChecking: false,
   matchedPairs: 0,
+  cardCount: 0,
 };
 
 /**
@@ -32,8 +33,6 @@ const handleSuccessMatch = () => {
   gameState.matchedPairs++;
 
   resetGameState();
-
-  console.log('매칭 성공');
 };
 
 /**
@@ -44,8 +43,8 @@ const handleFailMatch = () => {
     const firstNode = getCardElementBy(gameState.firstCard.index);
     const secondNode = getCardElementBy(gameState.secondCard.index);
 
-    flipToBack(gameState.firstCard.index);
-    flipToBack(gameState.secondCard.index);
+    animationFlipToBack(gameState.firstCard.index);
+    animationFlipToBack(gameState.secondCard.index);
 
     firstNode.classList.remove('flipped');
     secondNode.classList.remove('flipped');
@@ -88,7 +87,7 @@ const isValidCardClick = (clickedCard, index) => {
  */
 const selectFirstCard = (card, index) => {
   gameState.firstCard = { card, index };
-  flipToFront(index);
+  animationFlipToFront(index);
 };
 
 /**
@@ -99,7 +98,7 @@ const selectFirstCard = (card, index) => {
 const selectSecondCard = (card, index) => {
   gameState.secondCard = { card, index };
   gameState.isChecking = true;
-  flipToFront(index);
+  animationFlipToFront(index);
   checkMatch();
 };
 
@@ -127,6 +126,7 @@ export const handleCardClick = (e) => {
 export const initGame = (count) => {
   setGridLayout(count);
   renderCards('.board', getCards(count));
-  getNode('.board').addEventListener('click', handleCardClick);
+  gameState.cardCount = count;
   animationCardEntrance();
+  getNode('.board').addEventListener('click', handleCardClick);
 };
