@@ -1,4 +1,3 @@
-export * from './dom.js';
-export * from './gameUtils.js';
-export * from './cardView.js';
-export * from './gameController.js';
+// game.index,js
+export * from './controls/gameController.js';
+export * from './controls/index.js';

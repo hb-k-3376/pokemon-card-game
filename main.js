@@ -1,11 +1,12 @@
-import { initGame, gameState } from './game/index.js';
-import { uiController } from './ui/index.js';
+// main.js
+
+import { initGame, uiController } from './game/index.js';
 
 const configState = {
   cardCount: 4,
 };
 
-const handleGameModeChange = (newCount) => {
+const handleGameModeChange = (newCount = configState.cardCount) => {
   configState.cardCount = newCount;
   initGame(newCount);
 };
