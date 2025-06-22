@@ -1,5 +1,27 @@
-import { getNodes } from '../lib/utils.js';
+import { getNode, getNodes } from '../lib/utils.js';
 
+/**
+ * 기본적인 카드 앞 면 뒤집기 config
+ */
+const flipToFrontConfig = {
+  rotationY: 180,
+  duration: 0.8,
+  ease: 'power2.inOut',
+  transformOrigin: 'center center',
+};
+/**
+ * 기본적인 카드 뒷 면 뒤집기 config
+ */
+const flipToBackConfig = {
+  rotationY: 0,
+  duration: 0.6,
+  ease: 'power2.inOut',
+  transformOrigin: 'center center',
+};
+
+/**
+ * 카드 등장시 애니메이션
+ */
 export const animationCardEntrance = () => {
   const cards = getNodes('.card');
 
@@ -8,14 +30,64 @@ export const animationCardEntrance = () => {
     opacity: 0,
     scale: 0.5,
   });
-  // 각 카드를 순차적으로 애니메이션
+
   gsap.to(cards, {
     duration: 0.5,
-    x: 0, // 원래 자리로
-    rotation: 0, // 정상 회전
-    opacity: 1, // 불투명
-    scale: 1, // 원래 크기
-    ease: 'back.out(1.7)', // 탄성 효과
-    stagger: 0.1, // 0.1초씩 시차를 두고
+    x: 0,
+    rotation: 0,
+    opacity: 1,
+    scale: 1,
+    ease: 'back.out(1.7)',
+    stagger: 0.1,
   });
+};
+
+/**
+ * 뒷면인 카드 뭉치를 랜덤하게 앞연으로 보여줬다가 다시 뒷 면으로 돌리는 애니메이션
+ * @param {number} gameMode 게임 난이도 (카드 장 수)
+ */
+export const animationShowCardFront = async (gameMode) => {
+  const cards = getNodes('.card .card-inner');
+
+  const tl = gsap.timeline();
+
+  await tl
+    .to(cards, {
+      ...flipToFrontConfig,
+      stagger: {
+        amount: 1.5,
+        from: 'random',
+      },
+    })
+    .to(
+      cards,
+      {
+        ...flipToBackConfig,
+        stagger: {
+          amount: 1.5,
+          from: 'random',
+        },
+      },
+      `+=${gameMode / 10}`
+    );
+};
+
+/**
+ * 카드 앞 면 뒤집기 애니메이션
+ * @param {number} index 카드에 부여된 인덱스
+ */
+export const animationFlipToFront = (index) => {
+  const inner = getNode(`[data-index="${index}"] .card-inner`);
+
+  gsap.to(inner, flipToFrontConfig);
+};
+
+/**
+ * 카드 뒷 면 뒤집기 애니메이션
+ * @param {number} index 카드에 부여된 인덱스
+ */
+export const animationFlipToBack = (index) => {
+  const inner = getNode(`[data-index="${index}"] .card-inner`);
+
+  gsap.to(inner, flipToBackConfig);
 };

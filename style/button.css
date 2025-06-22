@@ -145,7 +145,12 @@
   box-shadow: 0 0 0 3px #991b1b, 0 10px 0 #991b1b, 0 16px 25px rgba(0, 0, 0, 0.4);
 }
 
-.action-btn.active {
+.reset-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 3px #065f46, 0 4px 0 #065f46, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.start-btn:active {
   transform: translateY(4px);
   box-shadow: 0 0 0 3px #065f46, 0 4px 0 #065f46, 0 6px 10px rgba(0, 0, 0, 0.3);
 }

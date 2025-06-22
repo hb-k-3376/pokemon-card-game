@@ -8,6 +8,7 @@
   display: grid;
   gap: 15px;
   background-color: inherit;
+  pointer-events: none;
 }
 
 .card {
