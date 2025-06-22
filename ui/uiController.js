@@ -18,6 +18,7 @@ export const uiController = {
     if (this.onGameModeChange) {
       this.onGameModeChange(target.value);
       board.style.pointerEvents = 'none';
+      getNode('.start-btn').disabled = false;
     }
   },
 
