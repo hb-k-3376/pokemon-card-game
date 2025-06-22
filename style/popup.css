@@ -26,6 +26,7 @@
   animation: grandEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   position: relative;
   overflow: hidden;
+  margin-inline: 30px;
 }
 
 /* 승리 광채 효과 */
@@ -105,6 +106,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
+
+  /* 모바일 */
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 .stat-item {

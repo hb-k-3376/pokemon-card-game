@@ -49,6 +49,20 @@ export const uiController = {
   },
 
   /**
+   * 게임 승리 시 나오는 팝업창 이벤트 핸들러
+   * @param {event} e
+   */
+  handlePopupControl(e) {
+    const target = e.target;
+    const gameMode = getNode('.pokemon-btn.active');
+
+    if (target.classList.contains('popup-overlay') || target.classList.contains('btn-primary')) {
+      getNode('.popup-overlay').style.display = 'none';
+      this.onGameModeChange(gameMode.value);
+    }
+  },
+
+  /**
    * ui 바인딩 함수
    * @param {function} onGameModeChange main에 있는 configState를 변경하기위해 받아오는 함수
    */
@@ -56,6 +70,7 @@ export const uiController = {
     this.onGameModeChange = onGameModeChange;
     const modeButtons = getNodes('.pokemon-btn');
     const actionButtons = getNodes('.action-btn');
+    const popupOverly = getNode('.popup-overlay');
 
     modeButtons.forEach((button) => {
       button.addEventListener('click', (e) => this.handleClickGameMode(e));
@@ -64,5 +79,7 @@ export const uiController = {
     actionButtons.forEach((button) => {
       button.addEventListener('click', (e) => this.handleGameAction(e));
     });
+
+    popupOverly.addEventListener('click', (e) => this.handlePopupControl(e));
   },
 };

@@ -10,6 +10,9 @@ export const gameState = {
   isChecking: false,
   matchedPairs: 0,
   cardCount: 0,
+  get finish() {
+    return this.cardCount / 2 === this.matchedPairs;
+  },
 };
 
 /**
@@ -27,12 +30,18 @@ const resetGameState = () => {
 const handleSuccessMatch = () => {
   const firstNode = getCardElementBy(gameState.firstCard.index);
   const secondNode = getCardElementBy(gameState.secondCard.index);
+
   firstNode.classList.add('matched');
   secondNode.classList.add('matched');
 
   gameState.matchedPairs++;
 
   resetGameState();
+
+  // 매칭 성공 시 팝업
+  if (gameState.finish) {
+    getNode('#popup').style.display = 'flex';
+  }
 };
 
 /**
