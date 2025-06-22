@@ -5,7 +5,7 @@
  * @param {number} max - 최댓값 (기본값: 200)
  * @returns {number} min부터 max 사이의 정수
  */
-const getRandomNumber = (min = 1, max = 200) => {
+const getRandomNumber = (min = 1, max = 259) => {
   return Math.floor(Math.random() * max - min + 1) + min;
 };
 

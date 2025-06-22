@@ -22,7 +22,6 @@ export const setGridLayout = (amount) => {
 
 /**
  * 게임 보드에 카드들을 렌더링
- * ✅ 기존 dom.js의 renderCards 이동
  * @param {string} selector 카드를 뿌려줄 부모 요소 선택자
  * @param {number[]} cards 카드를 만들 숫자 배열
  */
