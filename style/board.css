@@ -9,13 +9,20 @@
   gap: 15px;
   background-color: inherit;
   pointer-events: none;
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
 }
 
 .card {
-  width: 120px;
+  width: 100px;
   aspect-ratio: 5/7;
   perspective: 1000px;
   cursor: pointer;
+  /* 모바일 */
+  @media (max-width: 767px) {
+    width: 50px;
+  }
 }
 
 .card-inner {

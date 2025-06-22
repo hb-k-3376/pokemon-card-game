@@ -1,13 +1,13 @@
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #66b954 0%, #b282e2 100%);
-  padding: 50px;
+  padding: 25px;
 }
 
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .logo {

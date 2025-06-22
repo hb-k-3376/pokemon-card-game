@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <link rel="stylesheet" href="/style/reset.css">
   <link rel="stylesheet" href="/style/button.css">
+  <link rel="stylesheet" href="/style/popup.css">
   <link rel="stylesheet" href="/style/board.css">
   <link rel="stylesheet" href="/style/global.css">
   <script type="module" src="./main.js"></script>
@@ -41,6 +42,43 @@
       </ul>
     </section>
   </main>
+
+
+  <!-- 팝업 -->
+  <div class="popup-overlay" id="popup" style="display: none;">
+    <div class="popup-container">
+      <div class="confetti">
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+      </div>
+
+      <div class="popup-content">
+        <div class="victory-crown"></div>
+        <h1 class="title">게임 완료!</h1>
+        <p class="subtitle">축하합니다! 모든 카드 쌍을 찾았습니다!</p>
+
+        <div class="stats-container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-value" id="timeValue">02:34</span>
+              <div class="stat-label">완료 시간</div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-container">
+          <button class="btn btn-primary" onclick="restartGame()">다시 플레이</button>
+          <button class="btn btn-secondary" onclick="nextLevel()">다음 레벨</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer></footer>
 </body>
