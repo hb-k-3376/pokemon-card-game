@@ -76,10 +76,10 @@ export const animationShowCardFront = async (gameMode) => {
  * 카드 앞 면 뒤집기 애니메이션
  * @param {number} index 카드에 부여된 인덱스
  */
-export const animationFlipToFront = (index) => {
+export const animationFlipToFront = async (index) => {
   const inner = getNode(`[data-index="${index}"] .card-inner`);
 
-  gsap.to(inner, flipToFrontConfig);
+  await gsap.to(inner, flipToFrontConfig);
 };
 
 /**

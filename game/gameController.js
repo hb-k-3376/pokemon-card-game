@@ -98,8 +98,7 @@ const selectFirstCard = (card, index) => {
 const selectSecondCard = (card, index) => {
   gameState.secondCard = { card, index };
   gameState.isChecking = true;
-  animationFlipToFront(index);
-  checkMatch();
+  animationFlipToFront(index).then(() => checkMatch());
 };
 
 /**
