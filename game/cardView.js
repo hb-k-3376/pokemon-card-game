@@ -36,25 +36,3 @@ export const createCard = ({ card, index }) => {
     </li>
   `;
 };
-
-export const flipToFront = (index) => {
-  const inner = getNode(`[data-index="${index}"] .card-inner`);
-
-  gsap.to(inner, {
-    rotationY: 180,
-    duration: 0.8,
-    ease: 'power2.inOut',
-    transformOrigin: 'center center',
-  });
-};
-
-export const flipToBack = (index) => {
-  const inner = getNode(`[data-index="${index}"] .card-inner`);
-
-  gsap.to(inner, {
-    rotationY: 0,
-    duration: 0.6,
-    ease: 'power2.inOut',
-    transformOrigin: 'center center',
-  });
-};
