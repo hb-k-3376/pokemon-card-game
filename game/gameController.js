@@ -2,6 +2,7 @@ import { getCardElementBy, renderCards } from './dom.js';
 import { flipToFront, flipToBack, setGridLayout } from './cardView.js';
 import { getCards } from './gameUtils.js';
 import { getNode } from '../lib/utils.js';
+import { animationCardEntrance } from './animation.js';
 
 export const gameState = {
   firstCard: null,
@@ -127,4 +128,5 @@ export const initGame = (count) => {
   setGridLayout(count);
   renderCards('.board', getCards(count));
   getNode('.board').addEventListener('click', handleCardClick);
+  animationCardEntrance();
 };
