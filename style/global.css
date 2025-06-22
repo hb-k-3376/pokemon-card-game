@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #66b954 0%, #b282e2 100%);
   display: flex;
   flex-direction: column;
+  font-family: 'Press Start 2P', cursive;
 }
 
 header {
