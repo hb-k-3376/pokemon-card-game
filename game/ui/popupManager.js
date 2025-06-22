@@ -31,3 +31,13 @@ export const toggleWinPopup = (show) => {
     hideWinPopup();
   }
 };
+
+/**
+ * 게임 모드에 따른 승리 팝업창 표시
+ * @param {string} 게임 난이도 표시
+ */
+export const setGameMode = (gameMode) => {
+  const popupMode = getNode('#gameMode');
+
+  popupMode.textContent = gameMode;
+};

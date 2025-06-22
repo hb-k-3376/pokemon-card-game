@@ -1,5 +1,5 @@
 import { getNode, getNodes } from '../../lib/index.js';
-import { hideWinPopup } from '../ui/popupManager.js';
+import { hideWinPopup, setGameMode } from '../ui/popupManager.js';
 import { initGame, disableCardInteraction, startGame, resetGame } from './gameController.js';
 
 export const uiController = {
@@ -35,6 +35,11 @@ export const uiController = {
   handleClickGameMode(e) {
     const target = e.target;
     const gameMode = parseInt(target.value);
+
+    console.log(target.innerText);
+
+    // 팝업 UI 업데이트
+    setGameMode(target.innerText);
 
     // UI 상태 업데이트
     this.updateGameModeButtons(target);
