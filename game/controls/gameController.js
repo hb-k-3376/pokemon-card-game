@@ -122,11 +122,9 @@ export const disableCardInteraction = () => {
  */
 export const initGame = (count) => {
   // 게임 보드에 카드 깔기
-  console.log('initGame', count);
   initGameBoard('.board', getCards(count));
   // 기본적인 게임 데이터 설정
   initGameState(count);
-  console.log('gameState.cardStates', gameState.cardStates);
   // 카드 애니메이션
   animationCardEntrance();
   attachCardEventListeners('.board');
