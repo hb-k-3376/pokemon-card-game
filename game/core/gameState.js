@@ -1,3 +1,5 @@
+const ANIMATION_DURATION = 800;
+
 /**
  * 카드 상태 정의
  */
@@ -114,7 +116,10 @@ export const handleMatchSuccess = () => {
   setCardMatched(secondIndex);
   gameState.matchedPairs++;
 
-  resetSelectedCards();
+  // 애니메이션 끝날때 까지 대기
+  setTimeout(() => {
+    resetSelectedCards();
+  }, ANIMATION_DURATION);
 };
 
 /**
@@ -127,7 +132,10 @@ export const handleMatchFailure = () => {
   setCardHidden(firstIndex);
   setCardHidden(secondIndex);
 
-  resetSelectedCards();
+  // 애니메이션 끝날때 까지 대기
+  setTimeout(() => {
+    resetSelectedCards();
+  }, ANIMATION_DURATION);
 };
 
 /**
