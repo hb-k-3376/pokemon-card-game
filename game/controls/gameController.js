@@ -69,7 +69,7 @@ export const handleCardClick = (e) => {
   // 두 번째 카드 선택
   else if (!gameState.secondCard) {
     selectSecondCard(card, index);
-    // 애니메이션
+    // 애니메이션 및 매칭 체크
     animationFlipToFront(index).then(() => checkMatch());
   }
 };
@@ -121,8 +121,13 @@ export const disableCardInteraction = () => {
  * 게임 시작 시 설정해여할 이벤트 리스너 등록
  */
 export const initGame = (count) => {
+  // 게임 보드에 카드 깔기
+  console.log('initGame', count);
   initGameBoard('.board', getCards(count));
+  // 기본적인 게임 데이터 설정
   initGameState(count);
+  console.log('gameState.cardStates', gameState.cardStates);
+  // 카드 애니메이션
   animationCardEntrance();
   attachCardEventListeners('.board');
 };

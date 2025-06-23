@@ -6,8 +6,6 @@ export const uiController = {
   // 현재 선택된 게임 모드
   currentGameMode: null,
 
-  // 게임 모드 변경 콜백 (기존 호환성을 위해 유지)
-  onGameModeChange: null,
   /**
    * 시작 버튼 활성화
    */
@@ -36,8 +34,6 @@ export const uiController = {
     const target = e.target;
     const gameMode = parseInt(target.value);
 
-    console.log(target.innerText);
-
     // 팝업 UI 업데이트
     setGameMode(target.innerText);
 
@@ -54,10 +50,6 @@ export const uiController = {
 
     // 시작 버튼 활성화
     this.enableStartButton();
-
-    if (this.onGameModeChange) {
-      this.onGameModeChange(target.value);
-    }
   },
   /**
    * 게임 모드 버튼들 UI 상태 업데이트
@@ -104,7 +96,6 @@ export const uiController = {
    */
   handleResetGame() {
     // 게임 리셋
-    console.log(this.currentGameMode);
     resetGame(this.currentGameMode);
 
     // 카드 클릭 비활성화
@@ -120,24 +111,21 @@ export const uiController = {
    */
   handlePopupControl(e) {
     const target = e.target;
-    const gameMode = getNode('.pokemon-btn.active');
 
     if (target.classList.contains('popup-overlay') || target.classList.contains('btn-primary')) {
       hideWinPopup();
-      this.onGameModeChange(gameMode.value);
     }
   },
 
   /**
    * ui 바인딩 함수
-   * @param {function} onGameModeChange main에 있는 configState를 변경하기위해 받아오는 함수
+   * @param {function} count 기본 게임 난이도 4장
    */
-  init(onGameModeChange) {
-    this.onGameModeChange = onGameModeChange;
+  init(count) {
     const modeButtons = getNodes('.pokemon-btn');
     const actionButtons = getNodes('.action-btn');
     const popupOverly = getNode('.popup-overlay');
-    this.currentGameMode = getNode('.pokemon-btn.active').value;
+    this.currentGameMode = count;
 
     modeButtons.forEach((button) => {
       button.addEventListener('click', (e) => this.handleClickGameMode(e));
