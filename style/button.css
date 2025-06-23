@@ -165,3 +165,34 @@
   transform: translateY(4px);
   box-shadow: 0 0 0 3px #065f46, 0 4px 0 #065f46, 0 6px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* 사운드 */
+.round-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(145deg, #facc15, #eab308);
+  box-shadow: 0 8px 0 #a16207, 0 12px 20px rgba(0, 0, 0, 0.3);
+
+  top: 0;
+  right: 10px;
+}
+
+.round-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0 #a16207, 0 16px 25px rgba(0, 0, 0, 0.4);
+}
+
+.round-btn.active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #a16207, 0 6px 10px rgba(0, 0, 0, 0.3);
+}

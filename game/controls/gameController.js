@@ -20,6 +20,7 @@ import {
 } from '../core/index.js';
 import { initGameBoard } from '../ui/gameRenderer.js';
 import { showWinPopup } from '../ui/popupManager.js';
+import { miss_match_sound, tab_card_sound, win_sound } from '../sound.js';
 
 /**
  * 게임 승리 핸들러
@@ -27,6 +28,7 @@ import { showWinPopup } from '../ui/popupManager.js';
 const handleGameWin = () => {
   showWinPopup();
   resetGameForRestart();
+  win_sound();
 };
 
 /**
@@ -45,6 +47,7 @@ const checkMatch = () => {
   } else {
     animationFlipToBack(gameState.firstCard.index);
     animationFlipToBack(gameState.secondCard.index);
+    miss_match_sound();
     handleMatchFailure();
   }
 };
@@ -59,7 +62,8 @@ export const handleCardClick = (e) => {
   const card = clickedCard.dataset.card;
 
   if (!isValidCardSelection(index)) return;
-
+  // 사운드
+  tab_card_sound();
   // 첫 번재 카드 선택
   if (!gameState.firstCard) {
     selectFirstCard(card, index);
