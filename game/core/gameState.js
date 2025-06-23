@@ -1,4 +1,4 @@
-const ANIMATION_DURATION = 800;
+const ANIMATION_DURATION = 500;
 
 /**
  * 카드 상태 정의
