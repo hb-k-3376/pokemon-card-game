@@ -7,6 +7,7 @@ import { gameState } from './gameState.js';
  * @returns {boolean} - 매칭 여부
  */
 export const isCardsMatched = (firstCard, secondCard) => {
+  if (!firstCard || !secondCard) return;
   return firstCard.card === secondCard.card;
 };
 

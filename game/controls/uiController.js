@@ -27,6 +27,26 @@ export const uiController = {
   },
 
   /**
+   * 리셋 버튼 활성화
+   */
+  enableResetButton() {
+    const resetBtn = getNode('.reset-btn');
+    if (resetBtn) {
+      resetBtn.disabled = false;
+    }
+  },
+
+  /**
+   * 리셋 버튼 비활성화
+   */
+  disableResetButton() {
+    const resetBtn = getNode('.reset-btn');
+    if (resetBtn) {
+      resetBtn.disabled = true;
+    }
+  },
+
+  /**
    * 게임 난이도 클릭 시 ui 컨트롤 및 상태 관리 함수
    * @param {event} e
    */
@@ -83,9 +103,12 @@ export const uiController = {
   async handleStartGame(startButton) {
     // 시작 버튼 비활성화
     startButton.disabled = true;
+    this.disableResetButton();
 
     // 게임 시작 (카드 미리보기 포함)
-    await startGame(this.currentGameMode);
+    await startGame(this.currentGameMode).then(() => {
+      this.enableResetButton();
+    });
 
     // 시작 후에는 리셋 버튼만 활성화
     this.disableStartButton();
@@ -114,6 +137,7 @@ export const uiController = {
 
     if (target.classList.contains('popup-overlay') || target.classList.contains('btn-primary')) {
       hideWinPopup();
+      this.handleResetGame();
     }
   },
 
