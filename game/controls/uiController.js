@@ -1,6 +1,6 @@
 import { getNode, getNodes } from '../../lib/index.js';
 import { hideWinPopup, setGameMode } from '../ui/popupManager.js';
-import { initGame, disableCardInteraction, startGame, resetGame } from './gameController.js';
+import { disableCardInteraction, initGame, resetGame, startGame } from './gameController.js';
 
 export const uiController = {
   // 현재 선택된 게임 모드

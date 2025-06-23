@@ -1,4 +1,3 @@
-// game/gameUtils.js
 /**
  * min부터 max 사이의 랜덤한 난수 생성
  * @param {number} min - 최솟값 (기본값: 1)

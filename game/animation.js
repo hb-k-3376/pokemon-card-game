@@ -1,4 +1,3 @@
-// game/animation.js
 import { getNode, getNodes } from '../lib/utils.js';
 
 /**

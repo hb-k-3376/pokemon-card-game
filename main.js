@@ -1,7 +1,6 @@
-// main.js
-
 import { initGame, uiController } from './game/index.js';
 
+// 초기 난이도
 const configState = {
   cardCount: 4,
 };
