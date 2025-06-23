@@ -58,6 +58,9 @@ const checkMatch = () => {
  */
 export const handleCardClick = (e) => {
   const clickedCard = e.target.closest('.card');
+
+  if (!clickedCard) return;
+
   const index = clickedCard.dataset.index;
   const card = clickedCard.dataset.card;
 
